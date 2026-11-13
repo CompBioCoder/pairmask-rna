@@ -1,0 +1,11 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "pairmask-rna"
+version = "0.0.1"
+description = "A small, notebook-first reproduction of structure-guided RNA masking"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+[tool.setuptools.packages.find]
+where = ["src"]

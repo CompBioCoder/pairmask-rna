@@ -1,0 +1,15 @@
+data/
+checkpoints/
+*.pt
+*.tar.gz
+*.ckpt
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.DS_Store
+*.egg-info/
+config.local.yaml
+
+# Also ignore the symlinks themselves.
+/data
+/checkpoints

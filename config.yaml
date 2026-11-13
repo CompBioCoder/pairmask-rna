@@ -1,0 +1,6 @@
+official_repo: ../structRFM
+checkpoint: checkpoints/structRFM_checkpoint
+data_raw: data/raw
+figures: figures/level0
+results: results/level0
+preferred_device: mps
