@@ -1,6 +1,6 @@
 # structRFM 迷你复现：第0关完整报告
 
-记录日期：2026-11-13（Asia/Shanghai）。第0关 notebook 已从头执行通过，没有训练任何模型。检查结果为 **33项通过、0项失败、3项提醒**。本地仓库完成；GitHub CLI未登录，公开远程未创建、未推送，按任务约定保留本地提交。
+记录日期：2026-11-13（Asia/Shanghai）。第0关 notebook 已从头执行通过，没有训练任何模型。检查结果为 **34项通过、0项失败、2项提醒**。本地仓库完成；用户已手动授权GitHub CLI，公开仓库 [CompBioCoder/pairmask-rna](https://github.com/CompBioCoder/pairmask-rna) 已创建并成功推送main。原始数据和权重仍保留本地。
 
 ## 1．Mac 配置与 MPS
 
@@ -41,15 +41,11 @@ pip初次选中的pyarrow26.0.1在真实导入时要求NumPy≥2；再次dry-run
 
 本地目录名pairmask-rna，位于GitHub工作目录；未改为maskthepair。已完成git init、MIT许可证、README、目录结构、相对路径config.yaml、代码笔记与结果提交。data与checkpoints链接到相邻structRFM仓库，链接本身及全部大文件均已排除。
 
-`gh auth status`结果：未登录。遵照任务要求，没有代填密码或token；没有配置origin，也没有声称已经建立公开远程。公开API查询CompBioCoder/pairmask-rna时返回404，但最终是否可创建以登录后的GitHub为准。
+GitHub CLI已获用户手动网页授权，账号确认是CompBioCoder。显式使用现有系统代理解决命令行连接问题后，已创建公开仓库并成功完成main首次推送，origin指向：
 
-用户登录后，在本项目根目录执行：
+https://github.com/CompBioCoder/pairmask-rna.git
 
-```bash
-conda activate grnade_proteinmpnn
-gh auth login
-gh repo create CompBioCoder/pairmask-rna --public --source=. --remote=origin --push
-```
+数据和权重继续本地存储；发布内容包括原创代码、已执行notebook、中文笔记、PDF和数值结果，不包括原始数据或模型权重。
 
 官方structRFM仓库只新增下载文件，并按任务要求补上.gitignore规则；源码未改动、未commit、未push。
 
@@ -99,7 +95,7 @@ gh repo create CompBioCoder/pairmask-rna --public --source=. --remote=origin --p
 
 下游从3.709GB单体gzip流中选择性保留：zeroshot11个、bpRNA12,119个、ArchiveII3,976个、nRC2个，共16,108个文件、143,450,762字节（约143.45MB）。nRC训练6,320条、测试2,600条。没有保存整个下游tar.gz，也没有下载后面的Zfold大特征；累计处理到压缩流243,691,520字节，预取可能多传少量数据。完整已下载文件清单在results/level0/downloaded_task_files.json。
 
-预训练README大包后台断点续传：写本报告时26,814,072/4,456,225,221字节，**0.60%**。日志data/raw/download.log；未等待它完成。已有下载进程运行时不要重复启动脚本。磁盘空间满足20GB门槛，没有跳过。
+预训练README大包后台断点续传：写本报告时51,979,896/4,456,225,221字节，**1.17%**。日志data/raw/download.log；未等待它完成。已有下载进程运行时不要重复启动脚本。磁盘空间满足20GB门槛，没有跳过。
 
 清单来自[正式版Zenodo API](https://zenodo.org/api/records/18272040)和[README版Zenodo API](https://zenodo.org/api/records/16754363)；权重来自[官方release](https://github.com/heqin-zhu/structRFM/releases/tag/v0.0.8)。
 
@@ -135,7 +131,7 @@ gh repo create CompBioCoder/pairmask-rna --public --source=. --remote=origin --p
 ✅ 完整权重: structRFM_checkpoint.tar.gz
 ✅ 完整权重: structRFM_SSP_bpRNA1m.pt
 ✅ 完整权重: structRFM_SSP_RNAStrAlign.pt
-⚠️ 预训练大包: 进行中, 24716920/4456225221 bytes (0.55%)；日志 data/raw/download.log
+⚠️ 预训练大包: 进行中, 51979896/4456225221 bytes (1.17%)；日志 data/raw/download.log
 ✅ 下游小文件: 完成, 已保留 16108 个文件、143450762 bytes；类别 ['zeroshot', 'bprna', 'archiveii', 'nrc']
 ✅ 下游类别 nrc: 2 个小文件
 ✅ 下游类别 bprna: 12119 个小文件
@@ -143,15 +139,15 @@ gh repo create CompBioCoder/pairmask-rna --public --source=. --remote=origin --p
 ✅ 下游类别 zeroshot: 11 个小文件
 ✅ Git 仓库已初始化
 ✅ 至少有一次 Git commit
-⚠️ Git origin: 未配置；gh 未登录，按要求只建本地仓库
-总结：33 项通过，0 项失败，3 项提醒。
+✅ Git origin: https://github.com/CompBioCoder/pairmask-rna.git
+总结：34 项通过，0 项失败，2 项提醒。
 ```
 
 ## 8．问题及处理
 
 - 外置盘未挂载：使用本地目录和相对链接，提示后续接盘迁移。
-- gh不存在，Homebrew下载又遇DNS失败：改用GitHub CLI官方arm64发布包，安装到项目所用conda环境bin；查询后确认未登录，停止于本地提交。
-- curl不能解析GitHub/Zenodo域名，而Python网络可以访问：改用Python HTTP Range、失败重试与分段校验；权重全部完成，预训练大包继续后台续传。
+- gh不存在，Homebrew下载又遇DNS失败：改用GitHub CLI官方arm64发布包，安装到项目所用conda环境bin；随后由用户手动网页授权，确认CompBioCoder账号，已创建并推送公开仓库。
+- curl不能解析GitHub/Zenodo域名，而Python网络可以访问：下载改用Python HTTP Range、失败重试与分段校验；GitHub CLI和Git显式使用现有系统代理后连接成功。权重全部完成，预训练大包继续后台续传。
 - pip dry-run未发现pyarrow/NumPy运行时冲突：将pyarrow固定为17.0.0，保留torch/numpy，随后真实导入、MPS运算和整本notebook执行均通过。
 - 官方mat_feat与题目对公式7的字段称呼不同：保留原始定义，独立计算并验证真正对应的last_mean_attn_feat，记录两个误差。
 - 下游仅提供单体gzip：并行预取压缩分段、顺序解包、只保留目标小文件，及时停止大任务数据；初始长连接中断后改为可重试的Range读取。

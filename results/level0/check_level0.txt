@@ -25,7 +25,7 @@
 ✅ 完整权重: structRFM_checkpoint.tar.gz
 ✅ 完整权重: structRFM_SSP_bpRNA1m.pt
 ✅ 完整权重: structRFM_SSP_RNAStrAlign.pt
-⚠️ 预训练大包: 进行中, 24716920/4456225221 bytes (0.55%)；日志 data/raw/download.log
+⚠️ 预训练大包: 进行中, 51979896/4456225221 bytes (1.17%)；日志 data/raw/download.log
 ✅ 下游小文件: 完成, 已保留 16108 个文件、143450762 bytes；类别 ['zeroshot', 'bprna', 'archiveii', 'nrc']
 ✅ 下游类别 nrc: 2 个小文件
 ✅ 下游类别 bprna: 12119 个小文件
@@ -33,5 +33,5 @@
 ✅ 下游类别 zeroshot: 11 个小文件
 ✅ Git 仓库已初始化
 ✅ 至少有一次 Git commit
-⚠️ Git origin: 未配置；gh 未登录，按要求只建本地仓库
-总结：33 项通过，0 项失败，3 项提醒。
+✅ Git origin: https://github.com/CompBioCoder/pairmask-rna.git
+总结：34 项通过，0 项失败，2 项提醒。

@@ -49,7 +49,7 @@ python -m ipykernel install --user --name pairmask --display-name "Python (pairm
 ## GitHub 状态
 
 官方仓库不 commit/push。自己的仓库已本地 git init，提交作者采用公开 GitHub handle 及 noreply 地址。
-GitHub CLI 未登录，遵照任务约定只完成本地提交，不读取、填写或请求任何密码或 token。公开 API 查询目标名字返回404；没有改名。GitHub 远程的创建和首次推送需用户登录后执行。
+用户已在浏览器手动授权 GitHub CLI，确认账号为 CompBioCoder。命令行显式使用现有系统代理后连接成功；公开远程 [CompBioCoder/pairmask-rna](https://github.com/CompBioCoder/pairmask-rna) 已创建并完成 main 首次推送，未改名。数据和权重继续本地存储，不纳入 Git；不记录密码或 token。
 
 
 ## 实际导入时发现的兼容问题

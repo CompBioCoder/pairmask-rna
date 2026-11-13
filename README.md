@@ -1,5 +1,7 @@
 # pairmask-rna
 
+公开仓库：[CompBioCoder/pairmask-rna](https://github.com/CompBioCoder/pairmask-rna)。代码、notebook、笔记和结果图表在此公开；原始数据与模型权重保留本地，不进入Git版本控制。
+
 一周在 Mac 上迷你复现 structRFM 的结构引导遮盖机制。面向生物背景读者，采用中文 Jupyter notebook，一格一格展示中间结果。
 
 当前硬件：Apple M5，16 GiB 内存；第0关只做 76 nt tRNA 推理。后续使用小模型、小数据学习机制，不承诺复现论文 21M 序列的训练规模或原始性能。
