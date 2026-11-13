@@ -1,0 +1,19 @@
+# 安装前请在目标 conda 环境先做 pip install --dry-run -r requirements.txt
+# 本关复用已有 torch/numpy，防止意外改动关键包。
+torch==2.1.0
+numpy==1.26.4
+transformers==4.45.1
+structRFM==0.0.9
+BPfold==0.3.1
+ViennaRNA==2.8.0
+datasets==3.1.0
+pyarrow==17.0.0
+scikit-learn==1.9.1
+pandas==3.0.6
+matplotlib==3.11.2
+seaborn==0.13.2
+jupyter==1.1.1
+ipykernel==7.3.0
+einops==0.8.2
+tensorboardX==2.6.5
+PyYAML==6.0.3

@@ -1,0 +1,23 @@
+{
+  "structRFM_checkpoint.tar.gz": {
+    "expected": 319391429,
+    "prefix": 40894464,
+    "complete": true,
+    "bytes": 319391429,
+    "sha256": "244c58199dde85e2860c135fb6ec9f9e2d763acee1270a04aaf9019dd83e8868"
+  },
+  "structRFM_SSP_bpRNA1m.pt": {
+    "expected": 348179698,
+    "prefix": 50331648,
+    "complete": true,
+    "bytes": 348179698,
+    "sha256": "689e09e0ad3b51af19b03cb32ea3be5237384c3c9aa5716dff29989098e12145"
+  },
+  "structRFM_SSP_RNAStrAlign.pt": {
+    "expected": 348179375,
+    "prefix": 47185920,
+    "complete": true,
+    "bytes": 348179375,
+    "sha256": "1ffa3df1bbe16e429719135e14ac1e9d53d241bfc153c0edb1ddd491df6f0d9e"
+  }
+}

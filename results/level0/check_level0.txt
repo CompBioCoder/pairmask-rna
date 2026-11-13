@@ -1,0 +1,37 @@
+✅ import torch
+✅ import transformers
+✅ import structRFM
+✅ import RNA
+✅ import BPfold
+✅ MPS 可用: True（不可用不算失败）
+✅ 官方权重实际加载与特征形状: {'cls_feat': [768], 'seq_feat': [76, 768], 'mat_feat': [76, 76]}
+✅ 自算成对特征对 mat_feat 最大误差已记录: 120.678871
+✅ 对 last_mean_attn_feat 的最大误差: 2.23517418e-08
+⚠️ mat_feat 为碱基特征点积；公式7对应 last_mean_attn_feat，差异已解释
+✅ tRNA 最佳阈值=0.249, INF=0.818317088（max对称化，严格大于）
+✅ PDF: fpair_mean_last_layer.pdf
+✅ PDF: attn_L11_H5.pdf
+✅ PDF: native_contact_tRNA_Phe.pdf
+✅ PDF: zeroshot_inf_scan_tRNA.pdf
+✅ 源码笔记覆盖: SGMLM / PairMatch（关键词检查）
+✅ 源码笔记覆盖: r(t) 与组合单位（关键词检查）
+✅ 源码笔记覆盖: MUSES / MEA（关键词检查）
+✅ 源码笔记覆盖: 同源分类 OR（关键词检查）
+✅ 源码笔记覆盖: 预训练参数（关键词检查）
+✅ 源码笔记覆盖: tokenizer（关键词检查）
+✅ 笔记: 00_env.md
+✅ 笔记: 00_data_inventory.md
+✅ 笔记: CONVENTIONS.md
+✅ 完整权重: structRFM_checkpoint.tar.gz
+✅ 完整权重: structRFM_SSP_bpRNA1m.pt
+✅ 完整权重: structRFM_SSP_RNAStrAlign.pt
+⚠️ 预训练大包: 进行中, 24716920/4456225221 bytes (0.55%)；日志 data/raw/download.log
+✅ 下游小文件: 完成, 已保留 16108 个文件、143450762 bytes；类别 ['zeroshot', 'bprna', 'archiveii', 'nrc']
+✅ 下游类别 nrc: 2 个小文件
+✅ 下游类别 bprna: 12119 个小文件
+✅ 下游类别 archiveii: 3976 个小文件
+✅ 下游类别 zeroshot: 11 个小文件
+✅ Git 仓库已初始化
+✅ 至少有一次 Git commit
+⚠️ Git origin: 未配置；gh 未登录，按要求只建本地仓库
+总结：33 项通过，0 项失败，3 项提醒。

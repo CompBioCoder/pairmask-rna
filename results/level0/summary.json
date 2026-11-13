@@ -1,0 +1,50 @@
+{
+  "sequence_length": 76,
+  "native_pairs": 21,
+  "dot_bracket": "(((((((..((((........)))).(((((.......))))).....(((((.......))))))))))))....",
+  "device": "mps",
+  "mps_available": true,
+  "fallback_reason": null,
+  "versions": {
+    "torch": "2.1.0",
+    "transformers": "4.45.1",
+    "numpy": "1.26.4",
+    "structRFM": "0.0.9"
+  },
+  "feature_shapes": {
+    "cls_feat": [
+      768
+    ],
+    "seq_feat": [
+      76,
+      768
+    ],
+    "attn_feat": [
+      144,
+      76,
+      76
+    ],
+    "last_mean_attn_feat": [
+      76,
+      76
+    ],
+    "mat_feat": [
+      76,
+      76
+    ]
+  },
+  "pair_vs_mat_max_abs_error": 120.67887115478516,
+  "pair_vs_last_mean_attention_max_abs_error": 2.2351741790771484e-08,
+  "seq_feature_max_abs_error": 0.0,
+  "gram_vs_mat_max_abs_error": 0.0001068115234375,
+  "symmetrize": "max",
+  "threshold_comparison": ">",
+  "min_loop_filter": false,
+  "best_threshold": 0.249,
+  "best_inf": 0.8183170883849714,
+  "best_counts": {
+    "TP": 15,
+    "FP": 1,
+    "FN": 6
+  }
+}

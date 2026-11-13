@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """第0关检查：真实加载模型，并检查记录、PDF、笔记、下载和 Git。"""
 from pathlib import Path
+import os
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 import contextlib
 import io
 import importlib
@@ -12,6 +14,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 cfg = yaml.safe_load((ROOT / 'config.yaml').read_text())
+warnings.filterwarnings('ignore', message='.*return_dict_in_generate.*', category=UserWarning)
 counts = {'✅': 0, '❌': 0, '⚠️': 0}
 
 def emit(symbol, text):
@@ -86,6 +89,8 @@ s = raw/'tasks_download_status.json'
 if s.exists():
     d = json.loads(s.read_text())
     emit('✅' if d['state']=='完成' else '⚠️', f'下游小文件: {d["state"]}, 已保留 {d["selected_files"]} 个文件、{d["selected_bytes"]} bytes；类别 {list(d["categories"])}')
+    for category in ['nrc','bprna','archiveii','zeroshot']:
+        check(d.get('category_files',{}).get(category,0)>0, f'下游类别 {category}: {d.get("category_files",{}).get(category,0)} 个小文件')
 else:
     emit('⚠️','下游数据: 未开始')
 

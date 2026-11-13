@@ -1,0 +1,22 @@
+{
+  "state": "完成",
+  "source": "https://zenodo.org/api/records/16754363/files/tasks_data.tar.gz/content",
+  "compressed_bytes_read": 243691520,
+  "selected_files": 16108,
+  "selected_bytes": 143450762,
+  "categories": {
+    "zeroshot": 121666429,
+    "bprna": 12621913,
+    "archiveii": 7313620,
+    "nrc": 1848800
+  },
+  "skipped_large": [],
+  "archive_fully_scanned": false,
+  "stop_reason": "已取得 zeroshot、bpRNA、ArchiveII 和 nRC 所需小文件；nRC 包含 train.fa/test.fa。后续压缩流为大体积 Zfold 特征，只筛选所需数据，不继续扫描完整包。",
+  "category_files": {
+    "zeroshot": 11,
+    "bprna": 12119,
+    "archiveii": 3976,
+    "nrc": 2
+  }
+}

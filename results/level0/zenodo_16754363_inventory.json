@@ -1,0 +1,32 @@
+{
+  "id": 16754363,
+  "doi": "10.5281/zenodo.16754363",
+  "created": "2025-08-06T18:51:33.031829+00:00",
+  "modified": "2025-08-06T18:51:33.432422+00:00",
+  "files": [
+    {
+      "key": "RNAcentral_512_SS_connects.csv.tar.gz",
+      "size": 4456225221,
+      "checksum": "md5:24c6c7789fe366299ae00640f5f1a744",
+      "links": {
+        "self": "https://zenodo.org/api/records/16754363/files/RNAcentral_512_SS_connects.csv.tar.gz/content"
+      }
+    },
+    {
+      "key": "tasks_data.tar.gz",
+      "size": 3709424795,
+      "checksum": "md5:d13d0bfb56867b1ce597ce2fb896304b",
+      "links": {
+        "self": "https://zenodo.org/api/records/16754363/files/tasks_data.tar.gz/content"
+      }
+    },
+    {
+      "key": "checkpoints.tar.gz",
+      "size": 2244264123,
+      "checksum": "md5:e572a7781a8099ff45692fcd46f83043",
+      "links": {
+        "self": "https://zenodo.org/api/records/16754363/files/checkpoints.tar.gz/content"
+      }
+    }
+  ]
+}

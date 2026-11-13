@@ -1,0 +1,114 @@
+[
+  {
+    "name": "transformers",
+    "version": "4.45.1"
+  },
+  {
+    "name": "datasets",
+    "version": "3.1.0"
+  },
+  {
+    "name": "dill",
+    "version": "0.3.8"
+  },
+  {
+    "name": "fsspec",
+    "version": "2024.9.0"
+  },
+  {
+    "name": "huggingface_hub",
+    "version": "0.36.2"
+  },
+  {
+    "name": "multiprocess",
+    "version": "0.70.16"
+  },
+  {
+    "name": "tokenizers",
+    "version": "0.20.3"
+  },
+  {
+    "name": "structRFM",
+    "version": "0.0.9"
+  },
+  {
+    "name": "BPfold",
+    "version": "0.3.1"
+  },
+  {
+    "name": "ViennaRNA",
+    "version": "2.8.0"
+  },
+  {
+    "name": "jupyter",
+    "version": "1.1.1"
+  },
+  {
+    "name": "tensorboardX",
+    "version": "2.6.5"
+  },
+  {
+    "name": "aiohttp",
+    "version": "3.14.5"
+  },
+  {
+    "name": "multidict",
+    "version": "7.2.1"
+  },
+  {
+    "name": "yarl",
+    "version": "1.25.1"
+  },
+  {
+    "name": "aiohappyeyeballs",
+    "version": "2.7.1"
+  },
+  {
+    "name": "aiosignal",
+    "version": "1.4.0"
+  },
+  {
+    "name": "frozenlist",
+    "version": "1.8.0"
+  },
+  {
+    "name": "propcache",
+    "version": "0.5.4"
+  },
+  {
+    "name": "pyarrow",
+    "version": "26.0.1"
+  },
+  {
+    "name": "regex",
+    "version": "2026.11.9"
+  },
+  {
+    "name": "safetensors",
+    "version": "0.8.0"
+  },
+  {
+    "name": "ipywidgets",
+    "version": "8.1.9"
+  },
+  {
+    "name": "jupyterlab_widgets",
+    "version": "3.0.17"
+  },
+  {
+    "name": "widgetsnbextension",
+    "version": "4.0.16"
+  },
+  {
+    "name": "jupyter-console",
+    "version": "6.6.3"
+  },
+  {
+    "name": "notebook",
+    "version": "7.6.5"
+  },
+  {
+    "name": "jupyterlab",
+    "version": "4.6.6"
+  }
+]
