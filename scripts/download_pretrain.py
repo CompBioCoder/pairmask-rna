@@ -2,6 +2,7 @@
 """断点续传 README 版预训练包。只下载，不解压，不训练。"""
 from pathlib import Path
 import urllib.request
+import hashlib
 import shutil
 import time
 import yaml
@@ -17,11 +18,20 @@ size = 4456225221
 path = raw/name
 url = 'https://zenodo.org/api/records/16754363/files/'+name+'/content'
 with (raw/'download.log').open('a',buffering=1) as log:
-    for attempt in range(1000):
+    failures = 0
+    while True:
         try:
             n = path.stat().st_size if path.exists() else 0
             if n == size:
-                log.write('\nCOMPLETE\n')
+                expected = '24c6c7789fe366299ae00640f5f1a744'
+                md5 = hashlib.md5()
+                with path.open('rb') as inp:
+                    for chunk in iter(lambda: inp.read(8*1024**2), b''):
+                        md5.update(chunk)
+                digest = md5.hexdigest()
+                if digest != expected:
+                    raise ValueError('完整文件 MD5 不匹配，请保留日志后重新下载')
+                log.write('\nCOMPLETE; MD5 verified\n')
                 break
             if n > size:
                 raise ValueError('本地文件超出预期大小，请检查来源')
@@ -35,8 +45,14 @@ with (raw/'download.log').open('a',buffering=1) as log:
                 raise IOError('当前分段不完整，重试')
             with path.open('ab') as out:
                 out.write(data)
+            failures = 0
             n += len(data)
             log.write(f'\n{time.strftime("%Y-%m-%d %H:%M:%S")} {n}/{size} bytes {100*n/size:.2f}%\n')
+        except ValueError:
+            raise
         except Exception as exc:
-            log.write(f'\nretry: {exc}\n')
+            failures += 1
+            log.write(f'\nretry {failures}: {exc}\n')
+            if failures >= 100:
+                raise
             time.sleep(10)
